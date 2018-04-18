@@ -48,17 +48,15 @@ int main()
     cin>>val;
 
     //proses sorting menggunakan bubble sort :) :)
-    for(int i=1;i<n;i++)
-    {
-        for(int j=i;j<(n-i);j++){
-            if(AR[j]>AR[j+1])
-            {
-                temp=AR[j];
-                AR[j]=AR[j+1];
-                AR[j+1]=temp;
+
+    for (int i=1;i<=n-1;i++){
+        for (int j=i;j<n;j++){
+            if (AR[i-1]>AR[j]){
+                temp = AR[i-1];
+                AR[i-1] = AR[j];
+                AR[j] = temp;
             }
         }
-
     }
 
     found=BinarySearch(AR,n,val);
