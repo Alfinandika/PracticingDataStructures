@@ -30,7 +30,7 @@ bool BinarySearch(int AR[], int N, int VAL)
 
 int main()
 {
-    int AR[100],n,val,temp;;
+    int AR[100],n,val,temp, jumlah = 0;
     bool found;
 
     cout<<"Masukan Jumlah Angka : ";
@@ -44,30 +44,41 @@ int main()
         cin>>AR[i];
     }
 
-    cout<<"\nMasukan angka yang ingin dicari ";
+    cout<<"\nMasukan angka yang ingin dicari : ";
     cin>>val;
 
     //proses sorting menggunakan bubble sort :) :)
-    for(int i=1;i<n;++i)
+    for(int i=1;i<n;i++)
     {
-        for(int j=0;j<(n-i);++j)
+        for(int j=i;j<(n-i);j++){
             if(AR[j]>AR[j+1])
             {
                 temp=AR[j];
                 AR[j]=AR[j+1];
                 AR[j+1]=temp;
             }
+        }
+
     }
 
     found=BinarySearch(AR,n,val);
 
+    cout<<"Pengurutan Data : ";
+
+    for(int i=0;i<n;i++)
+    {
+        cout<<AR[i]<<" ";
+         jumlah += AR[i];
+    }
+
     if(found){
-        cout<<"\nData Ditemukan !";
+        cout<<"\nStatus : Data Ditemukan !";
     }
     else{
-        cout<<"\nData Tidak Ditemukan !";
+        cout<<"\nStatus : Data Tidak Ditemukan !";
     }
     cout<<endl;
+    cout<<"Penjumlahan Data : "<<jumlah<<endl;
     
     return 0;
 }

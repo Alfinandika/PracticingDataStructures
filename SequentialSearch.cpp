@@ -15,6 +15,7 @@ int main()
     int A[100];
     int n;
     int temp;
+    int jumlah = 0;
 
    cout<<"PROGRAM SEARCHING\n";
 
@@ -22,7 +23,7 @@ int main()
     cin>>n;
    for (i=0;i<n;i++)
    {
-   cout<<"masukkan data ke-"<<i<<" : ";
+   cout<<"masukkan data ke-"<<i+1<<" : ";
    cin>>A[i] ;
    }
 
@@ -43,19 +44,30 @@ int main()
    cout<<endl;
     cout<<"Input bilangan yang dicari : ";
     cin>>cari;
+    cout<<"Pengurutan Data : ";
+
+    for(int i=0;i<n;i++)
+    {
+        cout<<A[i]<<" ";
+         jumlah += A[i];
+    }
+    cout<<endl;
 
     ketemu=0;
-    for(i=0;i<7;i++)
+    for(i=0;i<n;i++)
     {
         if (A[i]==cari)
         {
             ketemu=1;
-            cout<<"Data ditemukan pada indeks ke-"<<i<<endl;;
+            cout<<"Status : Data ditemukan pada indeks ke-"<<i<<endl;;
         }
     }
 
     if (ketemu==0){
-       cout<<"Data tidak ditemukan";
+       cout<<"Status : Data tidak ditemukan";
     }
+
+    cout<<endl;
+    cout<<"Penjumlahan Data : "<<jumlah<<endl;
     cout<<endl;
 }
